@@ -13,7 +13,6 @@ function parse(filename, callback) {
             console.log('oh no');
         }
         output = JSON.parse(stdout);
-        console.log(output.results[0].plate);
         callback(output.results[0]);
     });
 }
