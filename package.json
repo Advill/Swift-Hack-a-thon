@@ -4,11 +4,15 @@
   "description": "License plate reader",
   "main": "backendtest.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "forever": "^0.15.3",
     "pg": "^7.4.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "request": "^2.87.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
