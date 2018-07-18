@@ -27,3 +27,5 @@ function func() {
 }
 
 func();
+console.log('Watching for new files!');
+

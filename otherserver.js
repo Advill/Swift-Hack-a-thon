@@ -16,13 +16,12 @@ app.use(bodyParser.json({type: 'application/json'}));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/test-api', async (req, res) => {
-   console.log('GOT EM!!!!!!!!!');
    res.json({status: 'user added'});
 });
 
 app.get('/Employee-LP', async (req,res) => {
     var allEmployees = await pool.query('select license_plate.id, plate_text, time_stamp from license_plate join employee on license_plate.id = employee.id join activity on employee.id = activity.id');
-    console.log(allEmployees);
+    console.log('employees queried');
     var tempJson = {id: [], plate_text: [], time_stamp: []};
     for (var i = 0; i < allEmployees.rowCount; i++) {
        tempJson.id[i] = allEmployees.rows[i].id;
@@ -34,7 +33,7 @@ app.get('/Employee-LP', async (req,res) => {
 
 app.get('/Other-LP', async (req,res) => {
     var allOther = await pool.query('select license_plate.id, plate_text, time_stamp from license_plate join other on license_plate.id = other.id join activity on other.id = activity.id');
-    console.log(allOther);
+    console.log('others queried');
     var tempJson = {id: [], plate_text: [], time_stamp: []};
     for (var i = 0; i < allOther.rowCount; i++) {
        tempJson.id[i] = allOther.rows[i].id;
@@ -46,7 +45,7 @@ app.get('/Other-LP', async (req,res) => {
 
 app.get('/All-LP', async (req,res) => {
     var all = await pool.query('select license_plate.id, plate_text, time_stamp from license_plate join activity on license_plate.id = activity.id');
-    console.log(all);
+    console.log('all queried');
     var tempJson = {id: [], plate_text: [], time_stamp: []};
     for (var i = 0; i < all.rowCount; i++) {
        tempJson.id[i] = all.rows[i].id;
@@ -72,14 +71,11 @@ app.get('/Add-Incidence', async (req,res) => {
             await pool.query('insert into other (id) values ($1)', [id.rows[0].id]);
         }
     }
-    console.log(id);
     res.json({status: 'Group Determined'});
 });
 app.get('/Add-Employee', async (req,res) => {
     var employee = req.query.plate_text;
-    console.log(employee);
     var isEmployee = await pool.query('select * from license_plate where plate_text = $1', [employee]);
-    console.log(isEmployee);
     if (isEmployee.rowCount == 0) {
         await pool.query('insert into license_plate (plate_text) values ($1)', [employee]);
         isEmployee = await pool.query('select * from license_plate where plate_text = $1', [employee]);

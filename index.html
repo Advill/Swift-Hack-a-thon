@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Medialoot Bootstrap 4 Dashboard Template</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <style>
+      
+        body {
+            color: #404E67;
+            background: #F5F7FA;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .table-wrapper {
+            width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+
+        .table-title {
+            padding-bottom: 10px;
+            margin: 0 0 10px;
+        }
+
+            .table-title h2 {
+                margin: 6px 0 0;
+                font-size: 22px;
+            }
+
+            .table-title .add-new {
+                float: right;
+                height: 30px;
+                font-weight: bold;
+                font-size: 12px;
+                text-shadow: none;
+                min-width: 100px;
+                border-radius: 50px;
+                line-height: 13px;
+            }
+
+                .table-title .add-new i {
+                    margin-right: 4px;
+                }
+
+        table.table {
+            table-layout: fixed;
+        }
+
+            table.table tr th, table.table tr td {
+                border-color: #e9e9e9;
+            }
+
+            table.table th i {
+                font-size: 13px;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+
+            table.table th:last-child {
+                width: 100px;
+            }
+
+            table.table td a {
+                cursor: pointer;
+                display: inline-block;
+                margin: 0 5px;
+                min-width: 24px;
+            }
+
+                table.table td a.add {
+                    color: #27C46B;
+                }
+
+                table.table td a.edit {
+                    color: #FFC107;
+                }
+
+                table.table td a.delete {
+                    color: #E34724;
+                }
+
+            table.table td i {
+                font-size: 19px;
+            }
+
+                table.table td a.add i {
+                    font-size: 24px;
+                    margin-right: -1px;
+                    position: relative;
+                    top: 3px;
+                }
+
+            table.table .form-control {
+                height: 32px;
+                line-height: 32px;
+                box-shadow: none;
+                border-radius: 2px;
+            }
+
+                table.table .form-control.error {
+                    border-color: #f50000;
+                }
+
+            table.table td .add {
+                display: none;
+            }
+
+
+
+    </style>
+
+</head>
+
+<body>
+	<div class="container-fluid" id="wrapper">
+		<div class="row">
+			<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-car"></em>&nbsp; VERISAFE</a></h1>
+													
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+				<ul class="nav nav-pills flex-column sidebar-nav">
+					<li class="nav-item"><a class="nav-link active" href="index.html"><em class="fa fa-dashboard"></em> Dashboard <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="forms.html"><em class="fa fa-pencil-square-o"></em> Help </a></li>
+				
+				</ul>
+				<a href="login.html" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
+			</nav>
+			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
+				<header class="page-header row justify-center">
+					<div class="col-md-6 col-lg-8" >
+						<h1 class="float-left text-center text-md-left">Dashboard</h1>
+					</div>
+					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="http://www.karlhussey.com/wp-content/uploads/2017/07/Thomas-Davy-5_pr.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+						<div class="username mt-1">
+                            <h4 class="mb-1">Sgt. Hussey</h4>
+							<h6 class="text-muted">Super Admin</h6>
+						</div>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
+						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Preferences</a>
+						     <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+					</div>
+					<div class="clear"></div>
+				</header>
+                <section class="row">
+                    <div class="col-sm-12">
+                        <section class="row">
+                            <div class="col-lg-12 col-lg-8">
+                                <div class="jumbotron">
+                                    <h1 class="mb-4">Welcome To VeriSafe!</h1>
+                                    <p class="lead">his dashboard is a "one stop shop" for all things related to your VeriSafe software.</p>
+                                    <p>This dashboard will allow you to assess traffic and monitor unknown vehicles without having to leave your security hub.</p>
+                                    <p class="lead"><a class="btn btn-primary btn-lg mt-2" href="#" role="button">Learn more</a></p>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-block">
+                                        <h3 class="card-title">Overview</h3>
+                                        <div class="dropdown card-title-btn-container">
+                                            <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
+                                            <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                                                <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                                                <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a>
+                                            </div>
+                                        </div>
+                                        <h6 class="card-subtitle mb-2 text-muted">Latest traffic stats</h6>
+                                        <div class="canvas-wrapper">
+                                            <canvas class="chart" id="line-chart" height="200" width="600"></canvas>
+                                        </div>
+                                    </div>
+
+                                         <div class="card mb-4">
+                        <div class="card-block">
+                            <h3 class="card-title">Urgent Alerts</h3>
+                            <div class="dropdown card-title-btn-container">
+                                <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
+                                <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                                    <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                                    <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a>
+                                </div>
+                            </div>
+                      
+                            <div class="divider" style="margin-top: 1rem;"></div>
+                            <div class="articles-container">
+                                <div class="article border-bottom">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">30</div>
+                                                <div class="text-muted">Jun</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">ALERT: VEHICLE WITHOUT LICENSE PLATE DETECTED</a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+
+                                <div class="article">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">30</div>
+                                                <div class="text-muted">Jun</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">ALERT: UNKNOWN LICENSE PLATE #: DMN9681 DETECTED MORE THAN 3 TIMES </a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+
+                                <div class="article">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">30</div>
+                                                <div class="text-muted">Jun</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">ALERT: UNKNOWN LICENSE PLATE #: DMN9681 DETECTED MORE THAN 3 TIMES </a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-block">
+                                        <h3 class="card-title">Employee Directory </h3>
+                                        <div class="dropdown card-title-btn-container">
+                                            <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-plus"></em>&nbsp;Add Employee</button>
+                                            <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                                                <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                                                <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>License Plate</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>0001</td>
+                                                        <td>Product Name 1</td>
+                                                        <td>Customer 1</td>
+                                                        <td>
+                                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0002</td>
+                                                        <td>Product Name 2</td>
+                                                        <td>Customer 2</td>
+                                                        <td>
+                                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0003</td>
+                                                        <td>Product Name 3</td>
+                                                        <td>Customer 3</td>
+                                                        <td>
+                                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0004</td>
+                                                        <td>Product Name 4</td>
+                                                        <td>Customer 4</td>
+                                                        <td>
+                                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-block">
+                                        <h3 class="card-title">All Traffic</h3>
+                                        <div class="dropdown card-title-btn-container">
+
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>License Plate</th>
+                                                    <th>Timestamp</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>0001</td>
+                                                    <td>Product Name 1</td>
+                                                    <td>Customer 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0002</td>
+                                                    <td>Product Name 2</td>
+                                                    <td>Customer 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0003</td>
+                                                    <td>Product Name 3</td>
+                                                    <td>Customer 3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0004</td>
+                                                    <td>Product Name 4</td>
+                                                    <td>Customer 4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-block">
+                                        <h3 class="card-title">All Unknown Traffic</h3>
+                                        <div class="dropdown card-title-btn-container">
+
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>License Plate</th>
+                                                    <th>Timestamp</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>0001</td>
+                                                    <td>Product Name 1</td>
+                                                    <td>Customer 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0002</td>
+                                                    <td>Product Name 2</td>
+                                                    <td>Customer 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0003</td>
+                                                    <td>Product Name 3</td>
+                                                    <td>Customer 3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0004</td>
+                                                    <td>Product Name 4</td>
+                                                    <td>Customer 4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                                 <div class="card mb-4">
+                        <div class="card-block">
+                            <h3 class="card-title">Notifications</h3>
+                            <div class="dropdown card-title-btn-container">
+                                <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
+                                <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                                    <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                                    <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a>
+                                </div>
+                            </div>
+                            <h6 class="card-subtitle mb-2 text-muted">Latest news</h6>
+                            <div class="divider" style="margin-top: 1rem;"></div>
+                            <div class="articles-container">
+                                <div class="article border-bottom">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">1</div>
+                                                <div class="text-muted">Jul</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">New Employee Plate Added</a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+
+                                <div class="article">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">30</div>
+                                                <div class="text-muted">Jun</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">Employee Plate Record Changed</a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+
+                                <div class="article">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-2 date">
+                                                <div class="large">28</div>
+                                                <div class="text-muted">Jun</div>
+                                            </div>
+                                            <div class="col-10">
+                                                <h4><a href="#">Employee Removed From Directory</a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div><!--End .article-->
+                            </div>
+
+               
+                            </div>
+                        </div>
+                    </div>
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+	    var startCharts = function () {
+	                var chart1 = document.getElementById("line-chart").getContext("2d");
+	                window.myLine = new Chart(chart1).Line(lineChartData, {
+	                responsive: true,
+	                scaleLineColor: "rgba(0,0,0,.2)",
+	                scaleGridLineColor: "rgba(0,0,0,.05)",
+	                scaleFontColor: "#c5c7cc "
+	                });
+	            }; 
+	        window.setTimeout(startCharts(), 1000);
+	</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    
+	</body>
+</html>

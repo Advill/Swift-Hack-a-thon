@@ -3,10 +3,9 @@ const request = require('request');
 const fs = require('fs');
 
 function writeTable(res, data) {
-    console.log(data);
     for (i = 0; i < data.id.length; i++) {
-        res.write('<tr>\n<th>' + data.id[i] + '</th>\n<th>' + 
-            data.plate_text[i] + '</th>\n<th>' + data.time_stamp[i] + '</th>\n')
+        res.write('<tr>\n<td>' + data.id[i] + '</td>\n<td>' + 
+            data.plate_text[i] + '</td>\n<td>' + data.time_stamp[i] + '</td>\n</tr>')
     }
 }
 let one;
@@ -57,6 +56,7 @@ function func (res) {
     res.write(two);
     writeTable(res, alltable);
     res.write(three);
+    res.end();
 }
 
 http.createServer(function (req, res) {

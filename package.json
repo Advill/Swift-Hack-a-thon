@@ -2,7 +2,7 @@
   "name": "swift-hack-a-thon",
   "version": "1.0.0",
   "description": "License plate reader",
-  "main": "backendtest.js",
+  "main": "server.js",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
@@ -11,10 +11,11 @@
     "pg": "^7.4.3"
   },
   "devDependencies": {
+    "parallelshell": "^3.0.2",
     "request": "^2.87.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "parallelshell \"node otherserver.js\" \"node server.js\""
   },
   "repository": {
     "type": "git",
