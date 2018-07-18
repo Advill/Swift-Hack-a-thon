@@ -9,52 +9,58 @@ function writeTable(res, data) {
             data.plate_text[i] + '</th>\n<th>' + data.time_stamp[i] + '</th>\n')
     }
 }
+let one;
+let two;
+let three;
+fs.readFile('src/first.html', (err, data) => {
+    if(err) throw err;
+    one = data;
+});
+fs.readFile('src/second.html', (err, data) => {
+    if(err) throw err;
+    two = data;
+});
+fs.readFile('src/third.html', (err, data) => {
+    if(err) throw err;
+    three = data;
+});
+let othertable;
+let alltable;
 
+request({
+    url:'http://localhost:8082/ALL-LP',
+    json:true
+}, function (error, response, body) {
+    if(!error && response.statusCode == 200) {
+        alltable = body;
+    }
+    else {
+        console.log(response.statusCode);
+    }
+});
+
+request({
+    url:'http://localhost:8082/Other-LP',
+    json:true
+}, function (error, response, body) {
+    if(!error && response.statusCode == 200) {
+        othertable = body;
+    }
+    else {
+        console.log(response.statusCode);
+    }
+});
+
+function func (res) {
+    res.write(one);
+    writeTable(res, othertable);
+    res.write(two);
+    writeTable(res, alltable);
+    res.write(three);
+}
 
 http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-type': 'text/html'});
-    var url = req.url;
-    res.write('<html>\n<body>\n');
-    res.write('<h1>' + url + '</h1>');
-    res.write('<table style="width:100%">');
-    if(url == '/employee') {
-        request({
-            url:'http://localhost:8082/Employee-LP',
-            json:true
-        }, function (error, response, body) {
-            if(!error && response.statusCode == 200) {
-                writeTable(res, body);
-            }
-            else {
-                console.log(response.statusCode);
-            }
-        });
-    }
-    else if (url == '/other') {
-        request({
-            url:'http://localhost:8082/Other-LP',
-            json:true
-        }, function (error, response, body) {
-            if(!error && response.statusCode == 200) {
-                writeTable(res, body);
-            }
-            else {
-                console.log(response.statusCode);
-            }
-        });
-    }
-    else if (url == '/all') {
-        request({
-            url:'http://localhost:8082/ALL-LP',
-            json:true
-        }, function (error, response, body) {
-            if(!error && response.statusCode == 200) {
-                writeTable(res, body);
-            }
-            else {
-                console.log(response.statusCode);
-            }
-        });
-    }
+    func(res);
 }).listen(8080);
+console.log('listening on port 8080');
 
