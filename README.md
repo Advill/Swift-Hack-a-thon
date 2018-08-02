@@ -30,7 +30,7 @@ works, and writing the dashboard from scratch or starting with it.
 
 The first and most important dependency is the open-source *Automatic License
 Plate Reader* program, which can be 
-[read about and installed here](www.github.com/openalpr/openalpr).
+[read about and installed here](https://github.com/openalpr/openalpr).
  
 In order to run this monstrosity of a program, you first need to install all
 npm dependencies, and run the `database.sql` against your postgresql database.
